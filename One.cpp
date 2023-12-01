@@ -75,7 +75,12 @@ void menu(){
                         int rows = 20;
                         int cols = 5;
                         
-                        
+                        cout <<"    ";
+                        for (int j = 0; j < cols; j++) {
+                            char column = 'A' + j;
+                            cout << "   " << column;
+                        }
+                        cout<<endl;
                         
                         for (int i = 0 ; i < p.size(); i++){
                             
@@ -99,14 +104,14 @@ void menu(){
                             cout << setw(4) << i << " ";
                             
                             
-                            bool check = false;
+              
                             int lastAssignedCol = -1;
                             
                             for (int passengerIndex = 0; passengerIndex < Flight.get_listPassenger().size(); passengerIndex++) {
                                 seat* k = Flight.get_listPassenger()[passengerIndex].get_seatPointer();
                                 
                                 if (k->get_row() == i) {
-                                    check = true;
+                             
                                     
                                     for (int j = lastAssignedCol + 1; j < cols; j++) {
                                         //vertical grid element
