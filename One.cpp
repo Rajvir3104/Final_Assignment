@@ -7,7 +7,7 @@
 #include <string>
 
 #include "class.h"
-
+#include "One.h"
 
 
 flight Flight;
@@ -378,5 +378,6 @@ void display_void(){
                         cout << "\n<<Press Enter to continue>>\n";
                         cin.ignore();
                         cin.get();    // Wait for user to press Enter
-                        ;
+                        
 }
+

@@ -3,8 +3,8 @@
 #include <sstream>
 #include <vector>
 
-#include "One.h"
 #include "class.h"
+#include "One.h"
 
 
 int main() {
@@ -13,5 +13,5 @@ int main() {
     display_header();
     menu();
 
-    
+
 }
