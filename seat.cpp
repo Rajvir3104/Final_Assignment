@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 
-
+#include "class.h"
 
 //Seat Class//
     

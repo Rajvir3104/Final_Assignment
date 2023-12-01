@@ -6,9 +6,8 @@
 #include <vector>
 #include <string>
 
-#include "passenger.cpp"
-#include "seat.cpp"
-#include "flight.cpp"
+#include "class.h"
+
 
 
 flight Flight;
@@ -89,97 +88,6 @@ void menu(){
                         
                         
                         
-                        
-                        // Code for displaying flight seat map (NEED TO READ FROM FIRST LINE FROM FILE)
-                        //flight Flight("WJ1045", 20, 5);
-                        
-                        int rows = 20;
-                        int cols = 5;
-                        
-                        
-                        
-                        for (int i = 0 ; i < p.size(); i++){
-                            
-                            Flight.set_seatMap(vector<vector<passenger> >(rows, Flight.get_listPassenger()));
-                            
-                        }
-                        
-                        
-                        // assign passengers (NEED TO ASSIGN PASSENGERS TO SEAT MAP TO BE PRINTED OUT)
-                        
-                        
-                        
-                        // display seat Map
-                        //const vector<vector<passenger> >& seatMap =Flight.get_seatMap();
-                        
-                        // Displaying seat map
-                        
-                        
-                        
-                        
-                        for (int i = 0; i < rows; i++) {
-                            
-                            cout << "     +";
-                            for (int j = 0; j < cols; j++) {
-                                cout << "---+";
-                            }
-                            cout << endl;
-                            
-                            
-                            cout << setw(4) << i << " ";
-                            
-                            
-                            bool check = false;
-                            int lastAssignedCol = -1;
-                            
-                            for (int passengerIndex = 0; passengerIndex < Flight.get_listPassenger().size(); passengerIndex++) {
-                                seat* k = Flight.get_listPassenger()[passengerIndex].get_seatPointer();
-                                
-                                if (k->get_row() == i) {
-                                    check = true;
-                                    
-                                    for (int j = lastAssignedCol + 1; j < cols; j++) {
-                                        //vertical grid element
-                                        cout << "| ";
-                                        
-                                        //check if the current column j matches the passenger's column
-                                        if (j == k->get_col() - 1) {
-                                            cout << "X ";
-                                            lastAssignedCol = j;
-                                            break;
-                                        } else {
-                                            cout << "  ";  //print empty space if no passenger in the current column
-                                        }
-                                    }
-                                }
-                            }
-                            
-                            //yeee fill remaining empty seats in the row
-                            for (int j = lastAssignedCol + 1; j < cols; j++) {
-                                
-                                cout << "| ";
-                                cout << "  ";
-                            }
-                            
-                            //vertical grid element at the end of the row
-                            cout << "|";
-                            cout << endl;
-                        }
-                        
-                      
-                        cout << "     +";
-                        for (int j = 0; j < cols; j++) {
-                            cout << "---+";
-                        }
-                        cout << endl;
-                        
-                        
-                        
-                        cin.clear();
-                        cout << "\n<<Press Enter to continue>>\n";
-                        cin.ignore();
-                        cin.get();    // Wait for user to press Enter
-                        break;
                     }
                     case 2: {
                         
@@ -378,4 +286,97 @@ void display_header(){
     
     return;
     
+}
+
+
+void display_void(){
+
+
+                        int rows = 20;
+                        int cols = 5;
+                        
+                        
+                        
+                        for (int i = 0 ; i < p.size(); i++){
+                            
+                            Flight.set_seatMap(vector<vector<passenger> >(rows, Flight.get_listPassenger()));
+                            
+                        }
+                        
+                        
+                        // assign passengers (NEED TO ASSIGN PASSENGERS TO SEAT MAP TO BE PRINTED OUT)
+                        
+                        
+                        
+                        // display seat Map
+                        //const vector<vector<passenger> >& seatMap =Flight.get_seatMap();
+                        
+                        // Displaying seat map
+                        
+                        
+                        
+                        
+                        for (int i = 0; i < rows; i++) {
+                            
+                            cout << "     +";
+                            for (int j = 0; j < cols; j++) {
+                                cout << "---+";
+                            }
+                            cout << endl;
+                            
+                            
+                            cout << setw(4) << i << " ";
+                            
+                            
+                            bool check = false;
+                            int lastAssignedCol = -1;
+                            
+                            for (int passengerIndex = 0; passengerIndex < Flight.get_listPassenger().size(); passengerIndex++) {
+                                seat* k = Flight.get_listPassenger()[passengerIndex].get_seatPointer();
+                                
+                                if (k->get_row() == i) {
+                                    check = true;
+                                    
+                                    for (int j = lastAssignedCol + 1; j < cols; j++) {
+                                        //vertical grid element
+                                        cout << "| ";
+                                        
+                                        //check if the current column j matches the passenger's column
+                                        if (j == k->get_col() - 1) {
+                                            cout << "X ";
+                                            lastAssignedCol = j;
+                                            break;
+                                        } else {
+                                            cout << "  ";  //print empty space if no passenger in the current column
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            //yeee fill remaining empty seats in the row
+                            for (int j = lastAssignedCol + 1; j < cols; j++) {
+                                
+                                cout << "| ";
+                                cout << "  ";
+                            }
+                            
+                            //vertical grid element at the end of the row
+                            cout << "|";
+                            cout << endl;
+                        }
+                        
+                      
+                        cout << "     +";
+                        for (int j = 0; j < cols; j++) {
+                            cout << "---+";
+                        }
+                        cout << endl;
+                        
+                        
+                        
+                        cin.clear();
+                        cout << "\n<<Press Enter to continue>>\n";
+                        cin.ignore();
+                        cin.get();    // Wait for user to press Enter
+                        ;
 }

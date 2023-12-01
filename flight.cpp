@@ -1,5 +1,8 @@
 
 
+#include "class.h"
+
+
 //Flight Class
 //Flight constructor
 flight::flight(const char* fID, const int rows, const int cols) {
