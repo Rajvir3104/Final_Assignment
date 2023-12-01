@@ -28,6 +28,21 @@ seat::seat() {
     Scol = 'A';
     status = 'O';
 }
+// Assignment operator
+
+seat& seat::operator=(const seat& source) {
+    if (this == &source) {
+
+        return *this;
+    }
+
+    Srow = source.Srow;
+    Scol = source.Scol;
+    status = source.status;
+
+    return *this;
+}
+
 //setters
 void seat::set_row(int row) {
     

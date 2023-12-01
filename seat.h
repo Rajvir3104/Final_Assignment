@@ -17,7 +17,8 @@ public:
     
     seat(const seat& source);
     seat(string& rownum, char s);
-    
+    seat& operator=(const seat& source);
+
     //setters
     void set_row(int row);
     void set_col(char col);
