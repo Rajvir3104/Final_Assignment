@@ -40,16 +40,13 @@ void passenger::set_passenger_id(int pID) {
     passenger_id = pID;
 };
 void passenger::set_seatPointer(seat* ptr) {
-    
-    
+
     seatPTR = new seat(*ptr);
-    
     
 }
 
 
 //copy constructor
-
 passenger::passenger(const passenger& source) {
     passenger_id = source.passenger_id;
     FName = source.FName;

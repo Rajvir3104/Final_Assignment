@@ -5,8 +5,10 @@
 #include <string>
 
 #include "airline.h"
-
 using namespace std;
+
+#ifndef ONE_H
+#define ONE_H
 
 void populate_flight_from_file();
 void menu();
@@ -23,3 +25,4 @@ struct Person {
     string rownum;
     int pID;
 };
+#endif

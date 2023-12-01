@@ -12,28 +12,29 @@ using namespace std;
 #define AIRLINE_H
 
 class airlines {
-private:
-    // three data members
-    std::string *airline_name;
-    std::vector<std::string *> flights;
-    int numberOflights;
 public:
     // constructor
-    airlines(const std::string &name) : numberOflights(0){};
+    airlines(const string &name);
     // destructor
     ~airlines();
 
     // member function to add flights
-    void addFlight(const std::string &flight);
+    void addFlight(const string &flight);
 
     // getter function for airline name
-    std::string get_airline_name() const;
+    string get_airline_name() const;
 
     // getter function for list of flights
-    const std::vector<std::string *> &get_flights() const;
+    const vector<string *> &get_flights() const;
 
     // getter function for number of flights
     int get_num_flights() const;
+
+private:
+    // three data members
+    string *airline_name;
+    vector<string *> flights;
+    int numberOflights;
 };
 
 #endif

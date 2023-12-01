@@ -72,7 +72,15 @@ void menu(){
                             
                             Flight.set_seatMap(vector<vector<passenger> >(rows, Flight.get_listPassenger()));
                         }
-                        
+                        cout << endl;
+                        cout << setw(24) << "Aircraft Seat Map" << endl;
+                        // column label
+                        cout << "    ";
+                        for (int j = 0; j < cols; j++) {
+                            char column = 'A' + j;
+                            cout << "   " << column;
+                        }
+                        cout << endl;
                         for (int i = 0; i < rows; i++) {
                             cout << "     +";
                             for (int j = 0; j < cols; j++) {
@@ -82,15 +90,12 @@ void menu(){
                             
                             cout << setw(4) << i << " ";
                             
-                            bool check = false;
                             int lastAssignedCol = -1;
                             
                             for (int passengerIndex = 0; passengerIndex < Flight.get_listPassenger().size(); passengerIndex++) {
                                 seat* k = Flight.get_listPassenger()[passengerIndex].get_seatPointer();
                                 
                                 if (k->get_row() == i) {
-                                    check = true;
-                                    
                                     for (int j = lastAssignedCol + 1; j < cols; j++) {
                                         //vertical grid element
                                         cout << "| ";
@@ -131,8 +136,7 @@ void menu(){
                         cin.get();    // Wait for user to press Enter
                     }
                     case 2: {
-                        
-                        
+                          
                         cout << "\nPassengers Information:\n" << endl;
                         cout << setw(20) << left << "First Name"
                              << setw(20) << left << "Last Name"
@@ -143,7 +147,6 @@ void menu(){
                         
                         
                         for (size_t i = 0; i < p.size(); ++i) {
-                            
                             
                             seat *k = p[i].get_seatPointer();
                             
@@ -297,10 +300,7 @@ void menu(){
                         return;
                     }
                 }
-            
         }
-
-      
     }
     return;
 }
