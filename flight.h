@@ -9,6 +9,8 @@
 
 using namespace std;
 
+
+
 #ifndef FLIGHT_H
 #define FLIGHT_H
 
@@ -16,11 +18,11 @@ class flight {
 public:
     //ctor
     flight();
-    flight(const char* fID, const int rows, const int cols);
+    flight(const string fID, const int rows, const int cols);
     flight(const flight& source);
     
     //setter functions
-    void set_flightID(char* fID);
+    void set_flightID(string fID);
     void set_fRows(int rows);
     void set_fCols(int cols);
     void set_listPassenger(const vector<passenger>& list);
@@ -39,6 +41,8 @@ private:
     int fCols;
     vector <passenger> passengerList;
     vector<vector<passenger> > seatMap;
-    //seatMap[][]
+  
 };
 #endif
+
+

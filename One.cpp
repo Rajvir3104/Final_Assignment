@@ -4,16 +4,46 @@
 flight Flight;
 vector<passenger> passengers;
 
-void populate_flight_from_file() {
-    ifstream file("flight_info.txt");
+
+
+void read_first_line(){
+
+  ifstream file("flight_info.txt");
 
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
         return;
     }
 
+    string firstLine;
+    getline(file, firstLine);
+
+    istringstream lineStream(firstLine);
+    string flightID;
+    int rows, cols;
+    lineStream >> flightID >> rows >> cols;
+
+    Flight.set_flightID(flightID);
+    Flight.set_fRows(rows);
+
+    
+    Flight.set_fCols(cols);
+
+   file.close();
+}
+
+void populate_flight_from_file() {
+  ifstream file("flight_info.txt");
+
+    if (!file.is_open()) {
+        cerr << "Error opening file." << endl;
+        return;
+    }
+
+
     string line;
     getline(file, line);
+   
     while (getline(file, line)) {
         Person person;
         person.firstName = line.substr(0, 20);
@@ -27,14 +57,14 @@ void populate_flight_from_file() {
        
         seat newSeat(person.rownum, 'X');
         newPassenger.set_seatPointer(&newSeat);
-       
+        
         passengers.push_back(newPassenger);
-
+        
     }
-
+    
     file.close();
     Flight.set_listPassenger(passengers);
- 
+
 }
 
 void menu(){
@@ -67,13 +97,9 @@ void menu(){
                      case 1: {
                         
                         
-                        
-                        
-                        // Code for displaying flight seat map (NEED TO READ FROM FIRST LINE FROM FILE)
-                        //flight Flight("WJ1045", 20, 5);
-                        
-                        int rows = 20;
-                        int cols = 5;
+                       
+                        int rows = Flight.get_fRows();
+                        int cols = Flight.get_fCols();
                         
                         cout <<"    ";
                         for (int j = 0; j < cols; j++) {

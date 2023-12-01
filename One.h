@@ -10,9 +10,14 @@ using namespace std;
 #ifndef ONE_H
 #define ONE_H
 
+
+void read_first_line();
 void populate_flight_from_file();
 void menu();
 void display_header();
+
+
+
 
 int convertStringToInt(const string& str);
 int charToInt(char c);

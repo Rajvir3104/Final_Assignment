@@ -2,7 +2,7 @@
 
 //Flight Class
 //Flight constructor
-flight::flight(const char* fID, const int rows, const int cols) {
+flight::flight(const string fID, const int rows, const int cols) {
     flightID = fID;
     fRows = rows+1;
     fCols = cols;
@@ -28,13 +28,14 @@ flight::flight(const flight& source) {
     fCols = source.fCols;
 }
 //Flight setter
-void flight::set_flightID(char* fID) {
+void flight::set_flightID(string fID) {
     flightID = fID;
 }
 void flight::set_fRows(int rows) {
     fRows = rows;
 }
 void flight::set_fCols(int cols){
+
     fCols = cols;
 }
 void flight::set_listPassenger(const vector<passenger>& list){

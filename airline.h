@@ -30,6 +30,10 @@ public:
     // getter function for number of flights
     int get_num_flights() const;
 
+
+
+    // other
+  
 private:
     // three data members
     string *airline_name;

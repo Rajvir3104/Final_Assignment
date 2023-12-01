@@ -7,5 +7,6 @@
 int main(void) {
     populate_flight_from_file();
     display_header();
+    read_first_line();
     menu();
 }
