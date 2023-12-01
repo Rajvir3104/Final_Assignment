@@ -1,15 +1,7 @@
+#include "passenger.h"
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
-#include <vector>
-#include <string>
-
-#include "class.h"
 
 //Passenger Class
-
 //constructor
 passenger::passenger(const int pID, const string& FN, const string& LN, const string& PNum, string&seatcode) {
     passenger_id = pID;
@@ -104,16 +96,5 @@ seat* passenger::get_seatPointer() const {
 
 //other
 
-
-int convertStringToInt(const string& str) {
-    int result = 0;
-    for (int i = 0; i < str.size(); ++i) {
-        char c = str[i];
-        if (isdigit(c)) {
-            result = result * 10 + (c - '0');
-        }
-    }
-    return result;
-}
 
 

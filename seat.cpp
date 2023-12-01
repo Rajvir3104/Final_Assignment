@@ -1,21 +1,10 @@
-
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
-#include <vector>
-#include <string>
-
-#include "class.h"
+#include "seat.h"
 
 //Seat Class//
-    
-
 //constructor
 seat::seat(int row, char col, char s) {
     Srow = row;
     Scol = col;
-    
     status = s;
 }
 
@@ -44,8 +33,6 @@ void seat::set_row(int row) {
     Srow = row;
 }
 
-
-
 void seat::set_col(char col) {
     
     Scol = col;
@@ -62,7 +49,6 @@ seat::seat(const seat& source) {
     Scol = source.Scol;
     status = source.status;
 }
-
 
 //getters
 int seat::get_row() const {
@@ -82,12 +68,3 @@ bool seat::get_status() const{
 
 //others
 
-
-int charToInt(char c) {
-    if ('A' <= c && c <= 'F') {
-        return c - 'A' + 1;
-    } else {
-        cerr << "Error: Input is not a valid digit or letter." << std::endl;
-        return 0;
-    }
-}

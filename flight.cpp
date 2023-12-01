@@ -1,8 +1,4 @@
 
-
-#include "class.h"
-
-
 //Flight Class
 //Flight constructor
 flight::flight(const char* fID, const int rows, const int cols) {
@@ -24,10 +20,6 @@ flight::flight() {
     fRows = 0;
     fCols = 0;
 }
-
-
-
-
 //Flight copy constructor
 flight::flight(const flight& source) {
     flightID = source.flightID;
@@ -48,7 +40,6 @@ void flight::set_listPassenger(const vector<passenger>& list){
     passengerList = list;
     for (int i = 0 ; i < fRows; i++){
         
-        
         for (int j = 0 ; i < fCols; j++){
             
             seatMap[i][j] = list[i];
@@ -57,7 +48,6 @@ void flight::set_listPassenger(const vector<passenger>& list){
     }
          
 }
-
 
 void flight::set_seatMap(const vector<vector<passenger> >& map){
     seatMap = map;

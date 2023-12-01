@@ -1,9 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <string>
-
-#include "class.h"
-
 
 class airlines
 {
@@ -51,5 +45,4 @@ public:
         return numberOflights;
     }
 
-    //
 };

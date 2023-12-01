@@ -1,12 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
+
+#include "airline.h"
+
+using namespace std;
 
 void populate_flight_from_file();
 void menu();
 void display_header();
 
-void display_map();
-void AddPassenger();
-void RemovePassenger();
-void Save();
-void display_passenger_info();
+int convertStringToInt(const string& str);
+int charToInt(char c);
 
-
+// Struct to store person info
+struct Person {
+    string firstName;
+    string lastName;
+    string phoneNumber;
+    string rownum;
+    int pID;
+};
