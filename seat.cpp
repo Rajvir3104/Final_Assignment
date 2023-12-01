@@ -1,4 +1,5 @@
 #include "seat.h"
+#include "One.h"
 
 //Seat Class//
 //constructor
@@ -56,7 +57,6 @@ int seat::get_row() const {
 }
 
 int seat::get_col() const {
-
 
     return charToInt(Scol);
 }

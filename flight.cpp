@@ -1,3 +1,4 @@
+#include "flight.h"
 
 //Flight Class
 //Flight constructor

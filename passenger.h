@@ -4,6 +4,9 @@
 #include <vector>
 #include <string>
 
+#include "seat.h"
+
+
 using namespace std;
 
 #ifndef PASSENGER_H

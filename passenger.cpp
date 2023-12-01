@@ -1,5 +1,5 @@
 #include "passenger.h"
-
+#include "seat.h"
 
 //Passenger Class
 //constructor
@@ -87,8 +87,6 @@ string passenger::get_PhoneNumber()const {
 string passenger::get_seat_code() const {
     return seat_code;
 }
-
-
 
 seat* passenger::get_seatPointer() const {
         return seatPTR;
